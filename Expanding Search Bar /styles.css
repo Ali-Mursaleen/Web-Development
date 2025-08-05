@@ -1,0 +1,26 @@
+html body{
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+input {
+    height: 2.5em;
+    width: 6em;
+    transition: width 0.3s ease-in-out;
+}
+
+input:focus {
+    width: 15em;
+}
+
+input:focus::placeholder {
+    color: transparent;
+}

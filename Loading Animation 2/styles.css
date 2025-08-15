@@ -1,0 +1,40 @@
+html body{
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+.square {
+    width:5em;
+    height:5em;
+    margin: 1.5em;
+    animation:rotate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.square1 {
+    background-color: #004a58;
+}
+.square2 {
+    background-color: #921c24;
+}
+.square3 {
+    background-color: #a07f50;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

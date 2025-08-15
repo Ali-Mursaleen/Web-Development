@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>GitHub Contribution Graph</title>
+</head>
+<body>
+    <h1>GitHub Contribution Graph</h1>
+    <div class="container">
+        <div class="graph"></div>
+        </div>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const graph = document.querySelector('.graph');
+  const totalCells = 52 * 7;
+  
+  for (let i = 0; i < totalCells; i++) {
+    const cell = document.createElement('div');
+    cell.setAttribute('data-cell', i);
+    graph.appendChild(cell);
+  }
+});
+</script>
+</body>
+</html>

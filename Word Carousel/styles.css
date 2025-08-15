@@ -1,0 +1,47 @@
+html body{
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    font-size: 5em;
+    color: #333;
+    text-align: center;
+}
+
+h1:after {
+    padding:0.3em;
+    content:"";
+    border-radius: 0.3em;
+    animation:9s swap;
+    animation-iteration-count: infinite;
+}
+@keyframes swap {
+    0% { content:"HTML";
+        background-color: blue;
+        color:white; }
+    20% { content:"CSS";
+        background-color: blue;
+        color:white;}
+    40% { content:"JavaScript";
+        background-color: blue;
+        color:white;}
+    60% { content:"React";
+        background-color: blue;
+        color:white;}
+    80% { content:"Node.js";
+        background-color: blue;
+        color:white;}
+    100% { content:"Web Development";
+        background-color: blue;
+        color:white;}
+}

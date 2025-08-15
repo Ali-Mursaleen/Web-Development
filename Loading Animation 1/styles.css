@@ -1,0 +1,35 @@
+html body{
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.circle {
+    background-color: lightgray;
+    width:5vw;
+    height: 10vh;
+    border-radius: 50%;
+    margin:1em;
+    animation-name: loading;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes loading {
+    from{background-color:lightgray;
+    width:10vh;
+    height: 5vw;}
+    to{background-color:darkgray;
+    width:10.3vh;
+    height: 5.3vw;}
+}

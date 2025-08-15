@@ -1,0 +1,41 @@
+html body{
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+.target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.ring {
+    position: absolute;
+}
+.ring1 {
+    background-color: black;
+    height: 25em;
+    width: 25em;
+    border-radius: 50%;
+}
+.ring2 {
+    background-color: blue;
+    height: 20em;
+    width: 20em;
+    border-radius: 50%;
+}
+.ring3 {
+    background-color: red;
+    height: 13em;
+    width: 13em;
+    border-radius: 50%;
+}
+.bullseye {
+    background-color: yellow;
+    height: 7em;
+    width: 7em;
+    border-radius: 50%;
+}

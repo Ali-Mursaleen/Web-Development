@@ -1,0 +1,269 @@
+body {
+  margin: 0;
+  font-size: 2em;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 0;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.title svg {
+  width: 80vw;
+  max-width: 450px;
+  height: auto;
+}
+
+.tagline {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: 0;
+  right: 0;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.tagline svg {
+  width: 90vw;
+  max-width: 1300px;
+  height: auto;
+}
+
+.shop-button {
+  position: static;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.shop-button button {
+  position: relative;
+  font-size: 1.2em;
+  padding: 0.7em 2em;
+  border-radius: 30px;
+  background: transparent;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  overflow: hidden;
+}
+
+.shop-button button::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  pointer-events: none;
+  opacity: 1;
+  /* Animate border drawing */
+  border-width: 2px;
+  border-style: solid;
+  border-color: #fff;
+  clip-path: inset(0 100% 0 0);
+  animation: buttonBorderDraw 1.5s cubic-bezier(.77,0,.18,1) forwards;
+}
+
+.shop-button button span {
+  opacity: 0;
+  animation: buttonTextFadeIn 1s 1.2s forwards;
+  display: inline-block;
+}
+
+.shop-button button.filled {
+  background: #fff;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+}
+
+@keyframes buttonBorderDraw {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes buttonTextFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  animation: bgZoomIn 4s ease-in-out 1 forwards;
+  z-index: -1;
+  pointer-events: none;
+}
+.banner::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('after.png');
+  background-size: cover;
+  background-position: center;
+  transform: scale(2);
+  animation: bgZoomOut 4s ease-in-out 1 forwards;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes bgZoomIn {
+  from {
+    transform: scale(1.2);
+  } to {
+    transform: scale(1);
+  }
+}
+@keyframes bgZoomOut {
+  from {
+    transform: scale(1);
+  } to {
+    transform: scale(2);
+  }
+}
+svg path {
+  fill: transparent;
+  stroke: #fff;
+  stroke-width: 3;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: textAnimation 4s ease-in-out 1 forwards;
+}
+
+@keyframes textAnimation {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  70% {
+    fill: transparent;
+  }
+  100% {
+    fill: #fff;
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 1.2em;
+  }
+  .banner {
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+  }
+  .title svg {
+    width: 95vw;
+    max-width: 95vw;
+    min-width: 250px;
+  }
+  .tagline svg {
+    width: 98vw;
+    max-width: 98vw;
+    min-width: 250px;
+  }
+  .shop-button button {
+    font-size: 1em;
+    padding: 0.7em 1.5em;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 20;
+}
+
+.navbar {
+  background: transparent !important;
+  box-shadow: none;
+  border: none;
+  position: relative;
+  width: 100vw;
+  padding: 0.5em 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.navbar::before {
+  display: none;
+}
+
+.navbar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 0 0 30px 30px;
+  background: rgba(0,0,0,0.15);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 0;
+  animation: navbarFillFadeIn 0.7s 0.7s forwards;
+}
+
+.navbar .container-fluid,
+.navbar .navbar-brand,
+.navbar .navbar-nav,
+.navbar .nav-link,
+.navbar .navbar-toggler,
+.navbar .form-control,
+.navbar .btn {
+  opacity: 0;
+  animation: navbarTextFadeIn 1s 1.2s forwards;
+  z-index: 2;
+}
+
+@keyframes navbarTextFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes navbarFillFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0.5em 0.5em;
+  }
+}
